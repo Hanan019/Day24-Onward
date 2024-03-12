@@ -50,7 +50,7 @@ export default class Day25CustomLookup extends LightningElement {
     this.displayOptions = false;
   }
 
-  removalSelectionHandler(event) {
+  removalSelectionHandler() {
     this.selectedRecord = {
       selectedId: "",
       selectedName: ""
