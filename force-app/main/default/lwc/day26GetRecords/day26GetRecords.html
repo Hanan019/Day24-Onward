@@ -1,14 +1,14 @@
 <template>
   <lightning-card title="Get Records Demo">
-    <template if:true={outputs}>
-      <template for:each={outputs} for:item="record">
-        <p key={record.id} class="slds-var-p-around_small">
-          {record.fields.Name.value}
+    <template if:true={outputValues}>
+      <template for:each={outputValues.results} for:item="outputValue">
+        <p class="slds-var-p-around_small" key={outputValue.id}>
+          {outputValue.result.fields.Name.value}
         </p>
       </template>
     </template>
-    <template if:true={errors}>
-      <p>Error: {errors}</p>
+    <template if:true={errorValues}>
+      <p>Error: {errorValues}</p>
     </template>
   </lightning-card>
 </template>

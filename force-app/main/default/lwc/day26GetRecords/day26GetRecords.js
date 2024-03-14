@@ -4,8 +4,8 @@ import ACCOUNT_NAME_FIELD from "@salesforce/schema/Account.Name";
 import CONTACT_NAME_FIELD from "@salesforce/schema/Contact.Name";
 
 export default class Day26GetRecords extends LightningElement {
-  outputs;
-  errors;
+  outputValues;
+  errorValues;
   @wire(getRecords, {
     records: [
       {
@@ -21,12 +21,12 @@ export default class Day26GetRecords extends LightningElement {
   outputFunction({ data, error }) {
     if (data) {
       console.log("data ", data);
-      this.outputs = data;
-      this.errors = null;
+      this.outputValues = data;
+      this.errorValues = null;
     } else if (error) {
       console.log("error ", error);
-      this.errors = error;
-      this.data = null;
+      this.errorValues = error;
+      this.outputValues = null;
     }
   }
 }
