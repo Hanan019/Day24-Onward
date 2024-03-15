@@ -10,8 +10,26 @@
         onchange={handleChange}
         class="slds-var-p-around_small"
       ></lightning-combobox>
-
       <p>Selected value is: {value}</p>
+    </template>
+  </lightning-card>
+
+  <lightning-card title="Get All Picklists Demo" icon-name="custom:custom14">
+    <template lwc:if={accountInfoFunction.data}>
+      <lightning-combobox
+        name="Rating"
+        label="Rating"
+        placeholder="Select Rating"
+        options={accountInfoFunction.data.picklistFieldValues.Rating.values}
+        class="slds-var-p-around_small"
+      ></lightning-combobox>
+      <lightning-combobox
+        name="Priority"
+        label="Customer Priority"
+        placeholder="Select Priority"
+        options={accountInfoFunction.data.picklistFieldValues.CustomerPriority__c.values}
+        class="slds-var-p-around_small"
+      ></lightning-combobox>
     </template>
   </lightning-card>
 </template>
