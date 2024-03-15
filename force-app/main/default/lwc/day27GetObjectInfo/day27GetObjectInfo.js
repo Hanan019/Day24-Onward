@@ -1,12 +1,13 @@
-import { getObjectInfo } from "lightning/uiObjectInfoApi";
+import { getObjectInfos } from "lightning/uiObjectInfoApi";
 import { LightningElement, wire } from "lwc";
 import ACCOUNT_OBJECT from "@salesforce/schema/Account";
+import CONTACT_OBJECT from "@salesforce/schema/Contact";
 
 export default class Day27GetObjectInfo extends LightningElement {
   accountinfo;
   accounterror;
-  @wire(getObjectInfo, {
-    objectApiName: ACCOUNT_OBJECT
+  @wire(getObjectInfos, {
+    objectApiNames: [ACCOUNT_OBJECT, CONTACT_OBJECT]
   })
   OutputFunction({ data, error }) {
     if (data) {
