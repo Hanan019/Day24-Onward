@@ -1,0 +1,15 @@
+<template>
+  <lightning-card title="Custom Event Demo">
+    <template lwc:if={displayMessage}>
+      <p class="slds-var-p-around_small">
+        Child to Parent Communication through Custom Event.
+      </p>
+    </template>
+
+    <div class="slds-var-p-around_small">
+      <c-day29-child-cust-event-demo
+        ondisplaymsg={displaymessageHandler}
+      ></c-day29-child-cust-event-demo>
+    </div>
+  </lightning-card>
+</template>
