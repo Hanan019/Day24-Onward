@@ -1,5 +1,7 @@
 import { LightningElement } from "lwc";
 import { NavigationMixin } from "lightning/navigation";
+import { encodeDefaultFieldValues } from "lightning/pageReferenceUtils";
+
 export default class Day28NavidationDemo extends NavigationMixin(
   LightningElement
 ) {
@@ -40,5 +42,24 @@ export default class Day28NavidationDemo extends NavigationMixin(
         }
       };
     this[NavigationMixin.Navigate](pageref);
+  }
+  CreateAccDefValuesHandler() {
+    //....
+    const defaultValues = encodeDefaultFieldValues({
+      Industry: "Energy",
+      Rating: "Hot"
+    });
+
+    let pageRef = {
+      type: "standard__objectPage",
+      attributes: {
+        objectApiName: "Account",
+        actionName: "new"
+      },
+      state: {
+        defaultFieldValues: defaultValues
+      }
+    };
+    this[NavigationMixin.Navigate](pageRef);
   }
 }
