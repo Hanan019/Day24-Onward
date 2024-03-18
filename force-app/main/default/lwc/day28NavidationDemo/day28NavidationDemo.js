@@ -62,4 +62,16 @@ export default class Day28NavidationDemo extends NavigationMixin(
     };
     this[NavigationMixin.Navigate](pageRef);
   }
+  //now for the editing.
+  EditAccountHandler() {
+    let pageref = {
+      type: "standard__recordPage",
+      attributes: {
+        recordId: "0015j00001VWC7sAAH",
+        objectApiName: "Account",
+        actionName: "edit"
+      }
+    };
+    this[NavigationMixin.Navigate](pageref);
+  }
 }
