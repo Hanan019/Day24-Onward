@@ -3,6 +3,7 @@ import {
   getPicklistValues,
   getPicklistValuesByRecordType
 } from "lightning/uiObjectInfoApi";
+
 import { LightningElement, wire } from "lwc";
 import ACCOUNT_OBJECT from "@salesforce/schema/Account";
 import ACCOUNT_INDUSTRY from "@salesforce/schema/Account.Industry";
