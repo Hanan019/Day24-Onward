@@ -2,7 +2,7 @@
   <lightning-card title="Contact Details" icon-name="custom:custom14">
     <lightning-layout class="slds-var-m-around_small">
       <lightning-layout-item>
-        <template if:true={contacts}>
+        <template lwc:if={contacts}>
           <template for:each={contacts.data} for:item="contact">
             <c-contact-item
               contact={contact}
@@ -13,7 +13,7 @@
         </template>
       </lightning-layout-item>
       <lightning-layout-item class="slds-var-p-around_small">
-        <template if:true={selectedContact}>
+        <template lwc:if={selectedContact}>
           <img src={selectedContact.PhotoUrl} />
           <p>{selectedContact.Name}</p>
           <p>{selectedContact.Title}</p>
